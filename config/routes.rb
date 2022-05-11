@@ -5,4 +5,8 @@ Rails.application.routes.draw do
     sessions: 'clients/sessions', passwords: 'clients/passwords'
   }
 
+  devise_for :staffs, path: :staffs, controllers: {
+    sessions: 'staffs/sessions', passwords: 'staffs/passwords'
+  }
+
 end

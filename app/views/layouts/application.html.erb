@@ -17,10 +17,17 @@
     <p class="alert"><%= alert %></p>
 
     <% if client_signed_in? %>
-      <li> Dear <%= current_client  %></li>
-      <li>  <%= link_to 'Sign Out!', destroy_client_session_path, method: :delete %> </li>
+      <li> Dear <%= current_client %> </li>
+      <li> <%= link_to 'Sign Out Client!', destroy_client_session_path, method: :delete %> </li>
     <% else %>
-      <li>  <%= link_to 'Sign In!', new_client_session_path %> </li>
+      <li> <%= link_to 'Sign In Client!', new_client_session_path %> </li>
+    <% end %>
+
+    <% if staff_signed_in? %>
+      <li> Dear <%= current_staff %> </li>
+      <li> <%= link_to 'Sign Out Staff!', destroy_staff_session_path, method: :delete %> </li>
+    <% else %>
+      <li> <%= link_to 'Sign In Staff!', new_staff_session_path %> </li>
     <% end %>
 
     <%= yield %>
