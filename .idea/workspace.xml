@@ -4,7 +4,8 @@
     <list default="true" id="f3ed90c4-3c99-41ca-9685-2d295af756b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/client.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/staff.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/staff.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +154,7 @@
       <workItem from="1652195309004" duration="7625000" />
       <workItem from="1652204441673" duration="6904000" />
       <workItem from="1652215332372" duration="480000" />
-      <workItem from="1652261433870" duration="3669000" />
+      <workItem from="1652261433870" duration="4340000" />
     </task>
     <servers />
   </component>
