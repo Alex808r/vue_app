@@ -7,11 +7,22 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag 'hello_vue' %>
+    <%= javascript_pack_tag 'application' %>
+    <%#= javascript_pack_tag 'hello_vue' %>
   </head>
 
   <body>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <% if client_signed_in? %>
+      <li> Dear <%= current_client  %></li>
+      <li>  <%= link_to 'Sign Out!', destroy_client_session_path, method: :delete %> </li>
+    <% else %>
+      <li>  <%= link_to 'Sign In!', new_client_session_path %> </li>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
