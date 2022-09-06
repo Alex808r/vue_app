@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     sessions: 'staffs/sessions', password: 'staffs/passwords'
   }
 
+  get :list, to: "items#index"
 end
