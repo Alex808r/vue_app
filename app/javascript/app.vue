@@ -60,8 +60,8 @@ export default {
     },
     fetchItems(){
       axios.get('/list')
-          .then((responce) => {
-            console.log(responce.data)
+          .then(({ data }) => {
+            console.log( data )
           })
     }
   }
