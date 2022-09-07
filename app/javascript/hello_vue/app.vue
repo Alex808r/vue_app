@@ -6,11 +6,11 @@
       p Error
     template(v-else)
       div(v-for="item in items" :key="item.id")
-        p {{ item.name }}
+        item(v-bind:item="item" @changed="change")
 </template>
 
 <script>
-import axios from 'axios';
+import Item from './components/items/Item.vue'
 
 export default {
   data: function () {
@@ -57,7 +57,7 @@ export default {
     // },
     fetchItems(){
       this.loading = true
-      axios.get('/list')
+      this.$api.items.index()
           .then(({ data }) => {
             console.log( data )
             this.items = data
@@ -65,7 +65,23 @@ export default {
           .catch(() => (this.error = true))
           .finally(() => this.loading = false)
 
+    },
+    // async fetchItems(){
+    //   this.loading = true
+    //   try{
+    //     const responce = await axios.get('/list')
+    //     this.items = responce.data
+    //   } catch {
+    //     this.error = true
+    //   }
+    //     this.loading = false
+    // },
+    change(id){
+      console.log(`change ${id} item`)
     }
+  },
+  components: {
+    Item
   }
 }
 </script>
