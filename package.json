@@ -6,6 +6,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
+    "axios": "^0.27.2",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
@@ -14,6 +15,10 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3"
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "webpack-dev-server": "^3",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2"
   }
 }

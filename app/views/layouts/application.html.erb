@@ -11,6 +11,10 @@
     <%#= javascript_pack_tag 'hello_vue' %>
   </head>
 
+  <header>
+    <%= render 'layouts/navbar_staff'%>
+  </header>
+
   <body>
 
     <p class="notice"><%= notice %></p>
@@ -18,18 +22,21 @@
 
     <% if client_signed_in? %>
       <li> Dear <%= current_client %> </li>
-      <li> <%= link_to 'Sign Out Client!', destroy_client_session_path, method: :delete %> </li>
+      <li> <%= link_to 'Sign Out Client!', destroy_client_session_path, method: :get %> </li>
+
     <% else %>
       <li> <%= link_to 'Sign In Client!', new_client_session_path %> </li>
     <% end %>
 
     <% if staff_signed_in? %>
       <li> Dear <%= current_staff %> </li>
-      <li> <%= link_to 'Sign Out Staff!', destroy_staff_session_path, method: :delete %> </li>
+      <li> <%= link_to 'Sign Out Staff!', destroy_staff_session_path, method: :get %> </li>
     <% else %>
       <li> <%= link_to 'Sign In Staff!', new_staff_session_path %> </li>
     <% end %>
 
-    <%= yield %>
+    <div id="app">
+      <%= yield %>
+    </div>
   </body>
 </html>
