@@ -1,3 +1,21 @@
 <br>
 
 <h3>Welcome Controller method index</h3>
+
+<my-component-name></my-component-name>
+
+
+<% if client_signed_in? %>
+  <li> Dear <%= current_client %> </li>
+  <li> <%= link_to 'Sign Out Client!', destroy_client_session_path, method: :get %> </li>
+
+<% else %>
+    <li> <%= link_to 'Sign In Client!', new_client_session_path %> </li>
+<% end %>
+
+<% if staff_signed_in? %>
+      <li> Dear <%= current_staff %> </li>
+      <li> <%= link_to 'Sign Out Staff!', destroy_staff_session_path, method: :get %> </li>
+<% else %>
+      <li> <%= link_to 'Sign In Staff!', new_staff_session_path %> </li>
+<% end %>

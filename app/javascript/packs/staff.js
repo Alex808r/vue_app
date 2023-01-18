@@ -10,20 +10,28 @@
 //     console.log('Added staff')
 // })
 
-
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue'
+import '../api/index'
+import Dashboard from "../components/staff/dashboard";
 
 document.addEventListener('DOMContentLoaded', () => {
-    Vue.component('my-component', {
-        template: '<p>Hello {{ message }}</p>',
-        data() {
-            return {
-                message: 'Vue'
-            }
-        }
-    })
-
-    new Vue({
-        el: '#app'
-    }).$mount()
+new Vue({
+    el: '#app',
+    render: h => h(Dashboard)
+}).$mount()
 })
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     Vue.component('my-component', {
+//         template: '<p>Hello {{ message }}</p>',
+//         data() {
+//             return {
+//                 message: 'Vue'
+//             }
+//         }
+//     })
+//
+//     new Vue({
+//         el: '#app'
+//     }).$mount()
+// })
