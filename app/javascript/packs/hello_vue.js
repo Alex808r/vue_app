@@ -6,8 +6,13 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue'
+// import Vue from 'vue/dist/vue.esm' // используем полную сборку так как есть строковый шаблон - template: <p> {{ message }}</p>
 import App from '../hello_vue/app.vue'
+// import App from '../hello_vue/app1.vue' # работа с quasar
 import '../hello_vue/api'
+import '../hello_vue/quasar'
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
@@ -17,6 +22,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log(app)
 })
+
+// Global example
+// document.addEventListener('DOMContentLoaded', () => {
+//   Vue.component('my-component-name', {
+//     template: '<p> {{ message }} </p>',
+//     data(){
+//       return {
+//         message: 'my-component'
+//       }
+//     }
+//   })
+//   new Vue({
+//     el: "#app"
+//   }).$mount()
+// })
+
+// Local example
+// document.addEventListener('DOMContentLoaded', () => {
+//   const myComponentName =  {
+//     template: '<p> {{ message }} </p>',
+//     data(){
+//       return {
+//         message: '1234'
+//       }
+//     }
+//   }
+//   new Vue({
+//     el: "#app",
+//     components:{
+//       'my-component-name': myComponentName
+//     }
+//   }).$mount()
+// })
 
 
 // The above code uses Vue without the compiler, which means you cannot
