@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  # get :items, to: "items#index"
+
+  constraints ->(req) { req.format == :json } do
+    resources :items
+  end
+
+  get '/*slug', to: 'welcome#index'
+
+
   devise_for :clients, path: :clients, controllers: {
     sessions: 'clients/sessions'
   }

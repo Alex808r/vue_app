@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+name = %w[First Second Third]
+text = %w[info alert error]
+
+3.times do|i|
+  Item.create name: name[i], text: text[i]
+end
