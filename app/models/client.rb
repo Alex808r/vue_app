@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  include DeviseMethods
+  include DeviseModules
 
   has_many :organization_clients, dependent: :destroy
   has_many :organizations, through: :organization_clients

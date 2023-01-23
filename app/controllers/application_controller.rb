@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  layout 'clients/application'
+
   private
 
   def response_data(object)

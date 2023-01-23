@@ -1,3 +1,3 @@
 class Staff < ApplicationRecord
-  include DeviseMethods
+  include DeviseModules
 end

@@ -6,9 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-
+    <%#= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= javascript_pack_tag 'application' %>
 
   </head>
 
@@ -40,14 +39,14 @@
     <%# end %>
 
     <div id="app">
-      <%#= yield %>
+      <%= yield %>
     </div>
-    <%= javascript_pack_tag 'hello_vue' %>
+    <%#= javascript_pack_tag 'hello_vue' %>
   </body>
 
-  <%# if current_staff.present? %>
-  <%#= javascript_pack_tag 'staff' %>
-  <%# elsif current_client.present? %>
-  <%#= javascript_pack_tag 'client' %>
-  <%# end %>
+  <% if current_staff.present? %>
+  <%= javascript_pack_tag 'staff' %>
+  <% elsif current_client.present? %>
+  <%= javascript_pack_tag 'client' %>
+  <% end %>
 </html>
