@@ -1,0 +1,33 @@
+<template lang="pug">
+  q-layout(view="lHh LpR fFf")
+    q-header(elevated class="bg-primary text-white" height-hint="98")
+      q-toolbar
+        q-toolbar-title
+          q-avatar
+            img(src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg")
+          | Приложение Сотрудника
+      navbar-layout
+
+    q-page-container
+      router-view
+
+    q-footer(elevated class="bg-grey-8 text-white")
+      q-toolbar
+        q-toolbar-title
+          q-avatar
+            img(src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg")
+</template>
+
+<script>
+// import NavbarLayout from '/app/javascript/app/components/staff/layout/navbar-layout'
+import NavbarLayout from './navbar-layout'
+export default {
+  name: 'layout',
+  components: {
+    'navbar-layout': NavbarLayout
+  },
+  data() {
+    return {}
+  },
+}
+</script>

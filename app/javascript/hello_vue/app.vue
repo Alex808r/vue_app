@@ -70,7 +70,7 @@ export default {
   },
 
   methods: {
-    pClass() {
+    pClass () {
       return this.isRed ? 'red' : 'orange'
     },
     changeMessage() {

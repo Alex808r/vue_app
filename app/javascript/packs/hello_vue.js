@@ -7,20 +7,20 @@
 
 import Vue from 'vue'
 // import Vue from 'vue/dist/vue.esm' // используем полную сборку так как есть строковый шаблон - template: <p> {{ message }}</p>
-import App from '../hello_vue/app.vue'
-// import App from '../hello_vue/app1.vue' # работа с quasar
+// import App from '../hello_vue/app.vue'
+import App from '../hello_vue/app1.vue' // работа с quasar
 import '../hello_vue/api'
 import '../hello_vue/quasar'
+import router from '../hello_vue/router'
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
+  new Vue({
+    el: "#app",
+    router,
     render: h => h(App)
   }).$mount()
-  document.body.appendChild(app.$el)
-
-  console.log(app)
 })
 
 // Global example
