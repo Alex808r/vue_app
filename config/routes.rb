@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
 
   # get :items, to: "items#index"
-  #
-  #   constraints ->(req) { req.format == :json } do
-  #     resources :items
-  #   end
+  get :message, to: "application#message"
 
-  #   # get '/*slug', to: 'welcome#index'
+    constraints ->(req) { req.format == :json } do
+      resources :items
+    end
 
-  # root 'welcome#index'
+    get '/*slug', to: 'welcome#index'
 
-  root 'application#index'
+  root 'welcome#index'
+
+
+
+  # root 'application#index'
 
   constraints ->(req) { req.format == :json } do
     get '/users/current_user', to: 'users#current_user', as: :current_user
