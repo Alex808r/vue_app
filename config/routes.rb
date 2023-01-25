@@ -7,13 +7,13 @@ Rails.application.routes.draw do
       resources :items
     end
 
-    get '/*slug', to: 'welcome#index'
+    # get '/*slug', to: 'welcome#index'
 
-  root 'welcome#index'
+  # root 'welcome#index'
 
 
 
-  # root 'application#index'
+  root 'application#index'
 
   constraints ->(req) { req.format == :json } do
     get '/users/current_user', to: 'users#current_user', as: :current_user

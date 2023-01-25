@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  # layout 'clients/application'
+  layout 'clients/application'
 
   def message
     render json: { message: "Message from ApplicationController" }
