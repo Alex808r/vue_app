@@ -12,6 +12,9 @@ import App from '../hello_vue/app1.vue' // работа с quasar
 import '../hello_vue/api'
 import '../hello_vue/quasar'
 import router from '../hello_vue/router'
+import '../hello_vue/socket'
+import store from '../hello_vue/store'
+
 
 
 
@@ -19,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: "#app",
     router,
+    store,
     render: h => h(App)
   }).$mount()
 })

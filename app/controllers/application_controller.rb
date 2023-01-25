@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   layout 'clients/application'
 
+  def message
+    render json: { message: "Message from ApplicationController" }
+  end
+
   private
 
   def response_data(object)

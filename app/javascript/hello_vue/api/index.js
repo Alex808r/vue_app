@@ -13,6 +13,7 @@ const adapter = axios.create({
 
 
 const api = {
+    message: () => adapter.get('/message'),
     items: {
         index: () => adapter.get('/items'),
         show: (id) => adapter.get(`/items/${id}`),

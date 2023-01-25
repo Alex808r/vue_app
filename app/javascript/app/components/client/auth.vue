@@ -1,7 +1,7 @@
 <template lang="pug">
   q-card(style="width: 750px; max-width: 85vw;")
-    h5.q-pa-lg Авторизация сотрудника
-    q-form(@submit="onSubmit" class="justify-center q-pa-lg")
+    h5.q-pa-lg Авторизация клиента
+    q-form.justify-center.q-pa-lg(@submit="onSubmit")
       q-input(
         ref="email"
         v-model="client.email"
@@ -46,11 +46,16 @@ export default {
       this.$api.clients.sign_in({
         client: this.client
       })
-          .then(({data}) => {
-            if (data['success']) {
-              this.$router.push({ name: 'client_organizations' })
-            }
-          })
+        .then(({data}) => {
+          if (data['success']) {
+            this.$store.dispatch('currentUser')
+                .finally(() => (
+                        this.$router.push({ name: 'client_organizations' })
+                    )
+                )
+          }
+        }
+      )
     },
   }
 }

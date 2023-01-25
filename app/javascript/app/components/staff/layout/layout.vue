@@ -1,6 +1,6 @@
 <template lang="pug">
   q-layout(view="lHh LpR fFf")
-    q-header(elevated class="bg-primary text-white" height-hint="98")
+    q-header.bg-primary.text-white(elevated height-hint="98")
       q-toolbar
         q-toolbar-title
           q-avatar
@@ -11,7 +11,7 @@
     q-page-container
       router-view
 
-    q-footer(elevated class="bg-grey-8 text-white")
+    q-footer.bg-grey-8.text-white(elevated)
       q-toolbar
         q-toolbar-title
           q-avatar

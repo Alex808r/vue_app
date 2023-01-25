@@ -1,5 +1,7 @@
 class Staffs::ClientsController < Staffs::ApplicationController
-    before_action :find_client, only: %i[update destroy]
+  include Pagy::Backend
+
+  before_action :find_client, only: %i[update destroy]
 
     # before_action :authenticate_user!
 
@@ -8,8 +10,13 @@ class Staffs::ClientsController < Staffs::ApplicationController
     # respond_to do |format|
     #   format.json { render json: @clients }
     # end
-    #
-    render json: Client.select(:id, :name, :email, :phone)
+
+    # render json: Client.select(:id, :name, :email, :phone)
+
+    @pagy, @records = pagy(Client.select(:id, :name, :email, :phone), items: params[:per_page] || 10)
+
+    render json: { clients: @records, pagy: pagy_metadata(@pagy) }
+
   end
 
   def new
