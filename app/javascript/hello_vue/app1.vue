@@ -62,28 +62,34 @@
 
 <script>
 
-
 import ItemTable from './components/ItemTable.vue'
 
 export default {
-  data () {
+  data() {
     return {
       left: false,
       user: {
-        savePassword: false
-      }
-    }
+        savePassword: false,
+      },
+    };
   },
-  methods: {
-    input(value){
-      console.log(value)
-      this.user.savePassword = value
-    }
 
+  methods: {
+    input(value) {
+      console.log(value);
+      this.user.savePassword = value;
+    },
+  },
+  created() {
+    console.log(process.env.API_BASE_URL);
+    this.$api.current()
+      .then(({ data }) => {
+        this.$i18n.locale = data.locale;
+      });
   },
 
   components: {
     ItemTable
-  }
-}
+  },
+};
 </script>

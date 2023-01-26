@@ -1,6 +1,7 @@
-export const fetchOrganizations = {
+export default {
   data() {
-    this.searchString = ''
+    this.loading = true;
+    this.searchString = '';
   },
   created() {
     this.fetchOrganizations();
@@ -8,11 +9,10 @@ export const fetchOrganizations = {
   methods: {
     fetchOrganizations() {
       this.$api.staffs.organizations.index(this.searchString)
-
-        .then(({data}) => {
-          this.organizations = data.organizations
-          this.loading = false
-        })
-    }
-  }
-}
+        .then(({ data }) => {
+          this.organizations = data.organizations;
+          this.loading = false;
+        });
+    },
+  },
+};

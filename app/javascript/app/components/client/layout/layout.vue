@@ -5,7 +5,7 @@
         q-toolbar-title
           q-avatar
             img(src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg")
-          | Приложение Клиента
+            | {{ $t("client.appName") }}
       navbar-layout
 
     q-page-container
@@ -19,14 +19,19 @@
 </template>
 
 <script>
-import NavbarLayout from './navbar-layout'
+import NavbarLayout from './navbar-layout.vue';
+
 export default {
   name: 'layout',
   components: {
-    'navbar-layout': NavbarLayout
+    'navbar-layout': NavbarLayout,
   },
   data() {
-    return {}
+    return {};
   },
-}
+  created() {
+    console.log(this.$store.getters.currentUser.locale)
+    // this.$i18n.locale = this.$store.getters.currentUser.locale;
+  },
+};
 </script>

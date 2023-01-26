@@ -37,26 +37,24 @@ export default {
     return {
       client: {
         email: '',
-        password: ''
-      }
-    }
+        password: '',
+      },
+    };
   },
   methods: {
     onSubmit() {
       this.$api.clients.sign_in({
-        client: this.client
+        client: this.client,
       })
-        .then(({data}) => {
-          if (data['success']) {
+        .then(({ data }) => {
+          if (data.success) {
             this.$store.dispatch('currentUser')
-                .finally(() => (
-                        this.$router.push({ name: 'client_organizations' })
-                    )
-                )
+              .finally(() => (
+                this.$router.push({ name: 'client_organizations' })
+              ));
           }
-        }
-      )
+        });
     },
-  }
-}
+  },
+};
 </script>

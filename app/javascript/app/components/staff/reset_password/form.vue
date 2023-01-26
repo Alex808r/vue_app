@@ -40,7 +40,6 @@
             q-btn(v-close-popup label="Закрыть" color="secondary")
 </template>
 
-
 <script>
 export default {
   name: 'reset-password-form',
@@ -52,8 +51,8 @@ export default {
       data: {
         password: '',
         confirm_password: '',
-      }
-    }
+      },
+    };
   },
   computed: {
     id() {
@@ -61,44 +60,44 @@ export default {
     },
     type() {
       return this.$route.params.type;
-    }
+    },
   },
   methods: {
     checkForm() {
       this.$refs.password.validate();
       this.$refs.confirm_password.validate();
       if (this.$refs.password.hasError || this.$refs.confirm_password.hasError) {
-        this.formHasError = true
+        this.formHasError = true;
       } else {
         this.onSubmit();
       }
     },
-    passwordsCheck: function(val) {
-      return val == this.$refs.password.value || 'Пароли должны совпадать'
+    passwordsCheck(val) {
+      return val === this.$refs.password.value || 'Пароли должны совпадать';
     },
     onSubmit() {
       this.$api.users.reset_password({
         id: this.id,
         type: this.type,
         password: this.data.password,
-        confirm_password: this.data.confirm_password
+        confirm_password: this.data.confirm_password,
       })
-          .then(({data}) => {
+          .then(({ data }) => {
             if (data.success) {
               this.onReset();
               this.showDialog = false;
             }
-          })
+          });
     },
-    onReset () {
+    onReset() {
       this.password = '';
       this.confirm_password = '';
       this.$refs.password.resetValidation();
       this.$refs.confirm_password.resetValidation();
     },
     pushToClients() {
-      this.$router.push({ name: 'staff_clients' })
-    }
-  }
-}
+      this.$router.push({ name: 'staff_clients' });
+    },
+  },
+};
 </script>

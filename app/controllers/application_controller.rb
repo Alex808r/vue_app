@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   layout 'clients/application'
-
+  def current
+    render json: { locale: :ru }
+  end
   def message
     render json: { message: "Message from ApplicationController" }
   end

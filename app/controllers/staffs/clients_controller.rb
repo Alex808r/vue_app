@@ -68,7 +68,7 @@ class Staffs::ClientsController < Staffs::ApplicationController
   private
 
   def permitted_params
-    params.require(:client).permit(:name, :email, :password, :phone)
+    params.require(:client).permit(:name, :email, :password, :phone, :locale)
   end
 
   def find_client
