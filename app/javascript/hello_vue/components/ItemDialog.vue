@@ -12,40 +12,39 @@
 </template>
 
 <script>
-import LoadersMixins from '../mixines/loaders'
+import LoadersMixins from '../mixines/loaders';
 
 export default {
   name: 'ItemDialog',
-  mixins: [ LoadersMixins ],
+  mixins: [LoadersMixins],
 
-  data(){
-    return{
+  data() {
+    return {
       item: {},
-      show: true
-    }
+      show: true,
+    };
   },
 
   created() {
     this.$api.items.show(this.id)
-        .then(({ data }) => (this.item = data ))
+      .then(({ data }) => (this.item = data));
   },
 
   computed: {
     id() {
-      return this.$route.params.id
-    }
+      return this.$route.params.id;
+    },
   },
 
   methods: {
     pushToItems() {
-      this.$router.push({name: 'items'})
+      this.$router.push({ name: 'items' });
     },
 
     updateItem() {
       this.$api.items.update(this.id, this.item)
-          .then(()=>(this.$emit('updated')))
-    }
-
-  }
-}
+        .then(() => (this.$emit('updated')));
+    },
+  },
+};
 </script>

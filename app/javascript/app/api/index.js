@@ -31,26 +31,25 @@ const DATA_WITH_URLS = [
 ]
 
 const METHODS_WITH_TRANSLATE = {
-  'patch': 'обновлен',
-  'delete': 'удален',
-  'post': 'создан'
-}
+  patch: 'обновлен',
+  delete: 'удален',
+  post: 'создан',
+};
 
-axios.interceptors.request.use(req => {
-  req.headers.common['Accept'] = 'application/json';
-  req.headers.common['X-CSRF-Token'] =
-    document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+axios.interceptors.request.use((req) => {
+  req.headers.common.Accept = 'application/json';
+  req.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');;
 
   return req;
 });
 
 axios.interceptors.response.use(
-  res => {
+  (res) => {
     let matchedObject = false
 
-    for (let dataObject of DATA_WITH_URLS) {
+    for (const dataObject of DATA_WITH_URLS) {
       if (res.config.url.includes(dataObject.url)) {
-        matchedObject = dataObject
+        matchedObject = dataObject;
         break;
       }
     }
@@ -60,7 +59,7 @@ axios.interceptors.response.use(
         return res;
       }
 
-      if (res.data['success']) {
+      if (res.data.success) {
         Notify.create({
           icon: 'done',
           color: 'positive',
@@ -80,7 +79,7 @@ axios.interceptors.response.use(
 
     return res;
   },
-  err => {
+  (err) => {
     console.log(err)
 
     return err;

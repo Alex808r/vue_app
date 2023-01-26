@@ -66,4 +66,4 @@
 //   }
 // );
 //
-// Vue.prototype.$axios = axios
+// Vue.prototype.$axios = axios;

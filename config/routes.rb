@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   # get :items, to: "items#index"
   get :message, to: "application#message"
+  get :current, to: "application#current"
 
     constraints ->(req) { req.format == :json } do
       resources :items

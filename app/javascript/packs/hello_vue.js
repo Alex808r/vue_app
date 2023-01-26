@@ -14,6 +14,7 @@ import '../hello_vue/quasar'
 import router from '../hello_vue/router'
 import '../hello_vue/socket'
 import store from '../hello_vue/store'
+import i18n from '../hello_vue/i18n'
 
 
 
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     router,
     store,
+    i18n,
     render: h => h(App)
   }).$mount()
 })

@@ -6,7 +6,8 @@ Vue.use(ActionCableVue, {
   debug: true,
   debugLevel: 'error',
   connectionUrl: 'ws://localhost:3000/cable',
+  // connectionUrl: process.env.SOCKET_CONNECTION_URL,
   connectImmediately: true
 });
 
-console.log(ActionCable.getConfig('url'))
+// console.log(ActionCable.getConfig('url'))

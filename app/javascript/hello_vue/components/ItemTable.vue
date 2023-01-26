@@ -1,6 +1,8 @@
 <template lang="pug">
   .row
     .col-12
+      | {{ $i18n.t('items.title') }}
+    .col-12
       | {{ $store.state.message }}
       p
         q-btn(v-on:click="$store.dispatch('fetchMessage')")
