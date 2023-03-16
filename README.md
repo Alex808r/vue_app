@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails + VueJS: современный фронтенд
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Стек:
+ Rails 6, devise, yarn, webpack, webpacker, vueJS
+ axios, pug, promises, async / await
+ Quasar Framework
+ Vue-router, action cable
+ Vuex, cli, i18n, dotenv, vue-cli, quasar-cli, vue-i18n
